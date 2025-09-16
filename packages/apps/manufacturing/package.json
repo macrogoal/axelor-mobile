@@ -12,7 +12,7 @@
     "lib"
   ],
   "scripts": {
-    "clean": "rm -rf lib/",
+    "clean": "rimraf lib/",
     "compile": "tsc -p tsconfig.build.json",
     "dev": "npm run compile -- --watch",
     "build": "npm run clean && npm run compile",
