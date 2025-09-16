@@ -1,4 +1,12 @@
 /*
+ * @Author: macrogoal macrogoal@sina.com
+ * @Date: 2025-01-21 17:26:13
+ * @LastEditors: macrogoal macrogoal@sina.com
+ * @LastEditTime: 2025-09-16 19:03:02
+ * @FilePath: \axelor-mobile\packages\core\src\i18n\i18n.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+/*
  * Axelor Business Solutions
  *
  * Copyright (C) 2025 Axelor (<http://axelor.com>).
@@ -65,5 +73,5 @@ export const i18nProvider = new I18nProvider();
 
 export const configI18n = ({
   resources,
-  defaultLanguage = 'en',
+  defaultLanguage = 'zh',
 }: langagesResources) => i18nProvider.configI18n({resources, defaultLanguage});

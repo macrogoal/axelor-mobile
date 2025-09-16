@@ -20,10 +20,17 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Icon, useThemeColor} from '@axelor/aos-mobile-ui';
 import {linkingProvider} from '../../../tools';
+import {isChineseLanguage} from '../../../tools/contact.helper';
+import {i18nProvider} from '../../../i18n/i18n';
 
-const splitFullName = _data => {
+const splitFullName = (_data, isChinese = false) => {
   const fullName = _data?.split(' ');
   if (fullName?.length === 2) {
+    // 如果是中文环境，假设姓名是按"姓 名"的顺序存储的
+    // 但需要注意，这里只是简单处理，实际情况可能更复杂
+    if (isChinese) {
+      return {firstName: fullName[1], lastName: fullName[0]};
+    }
     return {firstName: fullName[0], lastName: fullName[1]};
   } else {
     return {firstName: fullName, lastName: ''};
@@ -37,15 +44,30 @@ const formatGoogleSearch = ({
   company,
 }: ContactData) => {
   let result = '';
+  // 获取当前语言环境
+  const currentLanguage = i18nProvider.i18n.language;
+  const isChinese = isChineseLanguage(currentLanguage);
 
   if (name != null && lastName != null) {
-    result = result.concat(name).concat('+').concat(lastName);
+    if (isChinese) {
+      // 中文环境下，搜索时也使用"姓+名"的顺序
+      result = result.concat(lastName).concat('+').concat(name);
+    } else {
+      result = result.concat(name).concat('+').concat(lastName);
+    }
   } else if (fullName != null) {
-    const _names = splitFullName(fullName);
-    result = result
-      .concat(_names.firstName)
-      .concat('+')
-      .concat(_names.lastName);
+    const _names = splitFullName(fullName, isChinese);
+    if (isChinese) {
+      result = result
+        .concat(_names.lastName)
+        .concat('+')
+        .concat(_names.firstName);
+    } else {
+      result = result
+        .concat(_names.firstName)
+        .concat('+')
+        .concat(_names.lastName);
+    }
   }
 
   if (company != null) {
@@ -61,10 +83,21 @@ const formatLinkedinSearch = ({
   fullName,
   company,
 }: ContactData) => {
+  // 获取当前语言环境
+  const currentLanguage = i18nProvider.i18n.language;
+  const isChinese = isChineseLanguage(currentLanguage);
+
   if (name != null && lastName != null) {
+    if (isChinese) {
+      // 中文环境下，搜索时也使用"姓/名"的顺序
+      return `pub/dir/${lastName}/${name}`;
+    }
     return `pub/dir/${name}/${lastName}`;
   } else if (fullName != null) {
-    const _names = splitFullName(fullName);
+    const _names = splitFullName(fullName, isChinese);
+    if (isChinese) {
+      return `pub/dir/${_names.lastName}/${_names.firstName}`;
+    }
     return `pub/dir/${_names.firstName}/${_names.lastName}`;
   }
 

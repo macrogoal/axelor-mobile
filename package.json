@@ -9,7 +9,9 @@
     ]
   },
   "scripts": {
-    "clean": "find . -type d -name node_modules | xargs rm -rf && find . -type d -name lib | xargs rm -rf",
+    "clean": "npx rimraf node_modules && npx rimraf '**/node_modules' && npx rimraf '**/lib' && npx rimraf 'packages/**/node_modules' && npx rimraf 'packages/**/lib'",
+    "clean:win": "powershell -Command \"Remove-Item -Recurse -Force node_modules, (Get-ChildItem -Path . -Filter node_modules -Recurse -Directory).FullName, (Get-ChildItem -Path . -Filter lib -Recurse -Directory).FullName\"",
+    "clean:windows": "powershell -Command \"Get-ChildItem -Path . -Filter node_modules -Recurse -Directory | Remove-Item -Recurse -Force; Get-ChildItem -Path . -Filter lib -Recurse -Directory | Remove-Item -Recurse -Force\"",
     "dev": "nx run-many --target=dev --maxParallel=15",
     "build": "nx run-many --target=build",
     "start": "nx run-many --target=build && react-native start",

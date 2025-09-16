@@ -1,0 +1,51 @@
+<!--
+ * @Author: macrogoal macrogoal@sina.com
+ * @Date: 2025-09-16 19:57:28
+ * @LastEditors: macrogoal macrogoal@sina.com
+ * @LastEditTime: 2025-09-16 20:11:12
+ * @FilePath: \axelor-mobile\packages\apps\hr\README_zh.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+title: 人力资源
+ tags: Readme
+---
+
+<h1 align="center">@axelor/aos-mobile-hr</h1>
+
+<div align="center">
+    <img src="https://i.imgur.com/KJAAFlT.png" width="30%"/>
+</div>
+
+## 介绍
+
+此包是为 [Axelor Open Mobile](https://github.com/axelor/axelor-mobile) 应用程序开发的。
+
+该包的目的是与 [Axelor Open Suite (AOS)](https://github.com/axelor/axelor-open-suite) ERP 的人力资源（HR）模块链接。它提供了 Web 应用程序上可用的许多流程的简化版本。该包由两部分组成：
+- 第一部分用于费用管理，兼容 AOS 7.2.0 及更高版本
+- 第二部分用于工时表管理，兼容 AOS 8.0.0 及更高版本
+
+## 使用方法
+
+安装库：
+
+```bash
+yarn add @axelor/aos-mobile-hr
+```
+
+要在此应用程序中添加此包，您需要将其添加到 @axelor/aos-mobile-core 包的 `Application` 组件的 _modules_ 属性中。
+
+```javascript
+import React from 'react';
+import {Application} from '@axelor/aos-mobile-core';
+import {HrModule} from '@axelor/aos-mobile-hr';
+
+const App = () => {
+  return <Application modules={[HrModule]} mainMenu="auth_menu_user" />;
+};
+
+export default App;
+```
+
+## 开发
+
+此包是作为 Axelor Open Mobile 应用程序的一部分开发的。要做出贡献，请访问 [Github 项目](https://github.com/axelor/axelor-mobile) 并遵循指南。您还会找到安装指南来帮助您配置环境。

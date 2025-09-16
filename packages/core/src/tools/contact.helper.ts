@@ -86,15 +86,32 @@ const CONTACT_MAPPER: {
   },
 };
 
-const manageAndroidName = (data: ContactData) => {
+// 判断是否为中文语言环境
+export const isChineseLanguage = (localization?: string): boolean => {
+  // 中文语言代码通常为 'zh', 'zh_CN', 'zh_TW' 等
+  return localization?.toLowerCase().startsWith('zh') || false;
+};
+
+const manageAndroidName = (data: ContactData, localization?: string) => {
   let result = '';
+  const chineseLocale = localization ? isChineseLanguage(localization) : false;
 
-  if (data.firstName != null) {
-    result = result.concat(data.firstName);
-  }
-
-  if (data.lastName != null) {
-    result = result.concat(' ').concat(data.lastName);
+  if (chineseLocale) {
+    // 中文环境：姓在前，名在后
+    if (data.lastName != null) {
+      result = result.concat(data.lastName);
+    }
+    if (data.firstName != null) {
+      result = result.concat(data.firstName);
+    }
+  } else {
+    // 非中文环境：名在前，姓在后
+    if (data.firstName != null) {
+      result = result.concat(data.firstName);
+    }
+    if (data.lastName != null) {
+      result = result.concat(' ').concat(data.lastName);
+    }
   }
 
   return result;
@@ -139,6 +156,7 @@ const manageAddressField = (value, label) => {
 
 export const parseContactData = (
   contact: ContactData,
+  localization?: string,
 ): Partial<Contacts.Contact> => {
   if (isEmpty(contact)) {
     return {};
@@ -178,9 +196,8 @@ export const parseContactData = (
     }
   });
 
-  if (Platform.OS === 'android') {
-    result.displayName = manageAndroidName(contact);
-  }
+  // 为所有平台设置displayName，根据语言环境调整姓名顺序
+  result.displayName = manageAndroidName(contact, localization);
 
   return result;
 };

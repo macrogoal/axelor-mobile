@@ -24,6 +24,7 @@ import {
   parseContactData,
 } from './contact.helper';
 import {showToastMessage} from '../utils';
+import {i18nProvider} from '../i18n/i18n';
 
 class ContactProvider {
   constructor() {}
@@ -84,8 +85,10 @@ class ContactProvider {
 
       switch (permissionResult) {
         case PermissionResult.GRANTED:
-          const contactAdded: boolean = await Contacts.openContactForm(
-            parseContactData(contactData),
+          // 获取当前语言环境
+      const currentLanguage = i18nProvider.i18n.language;
+      const contactAdded: boolean = await Contacts.openContactForm(
+            parseContactData(contactData, currentLanguage),
           ).then(_contact => {
             if (_contact != null) {
               this._showToast(

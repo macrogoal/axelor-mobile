@@ -31,6 +31,7 @@ import {
 import {configI18n} from '../i18n/i18n';
 import enTranslation from '../i18n/translations/en.json';
 import frTranslation from '../i18n/translations/fr.json';
+import zhTranslation from '../i18n/translations/zh.json';
 import {configGlobalStore} from '../redux/store';
 import {requestBuilder} from '../apiProviders/Standard/requests.helper';
 import {webSocketProvider} from '../websocket';
@@ -78,14 +79,16 @@ const ContextsProvider = ({
           return {
             en: {...translations.en, ..._module.translations?.en},
             fr: {...translations.fr, ..._module.translations?.fr},
+            zh: {...translations.zh, ..._module.translations?.zh},
           };
         },
-        {en: enTranslation, fr: frTranslation},
+        {en: enTranslation, zh: zhTranslation, fr: frTranslation},
       );
 
     configI18n({
       resources: [
         {lng: 'en', translationsObject: appTranslations.en},
+        {lng: 'zh', translationsObject: appTranslations.zh},
         {lng: 'fr', translationsObject: appTranslations.fr},
       ],
       defaultLanguage: defaultLanguage,
