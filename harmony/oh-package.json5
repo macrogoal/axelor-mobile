@@ -1,0 +1,34 @@
+{
+  "name": "example-name",
+  "description": "example description",
+  "version": "1.0.0",
+  "modelVersion": "5.0.0",
+  "license": "ISC",
+  "repository": {},
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "file:../node_modules/@react-native-oh/react-native-harmony/react_native_openharmony.har",
+    "@react-native-oh-tpl/clipboard": "file:../node_modules/@react-native-oh-tpl/clipboard/harmony/clipboard.har",
+    "@react-native-oh-tpl/react-native-blob-util": "file:../node_modules/@react-native-oh-tpl/react-native-blob-util/harmony/blobUtil.har",
+    "@react-native-oh-tpl/react-native-contacts": "file:../node_modules/@react-native-oh-tpl/react-native-contacts/harmony/contacts.har",
+    "@react-native-oh-tpl/react-native-date-picker": "file:../node_modules/@react-native-oh-tpl/react-native-date-picker/harmony/date_picker.har",
+    "@react-native-oh-tpl/react-native-device-info": "file:../node_modules/@react-native-oh-tpl/react-native-device-info/harmony/device_info.har",
+    "@react-native-oh-tpl/react-native-file-viewer": "file:../node_modules/@react-native-oh-tpl/react-native-file-viewer/harmony/file_viewer.har",
+    "@react-native-oh-tpl/react-native-fs": "file:../node_modules/@react-native-oh-tpl/react-native-fs/harmony/fs.har",
+    "@react-native-oh-tpl/react-native-gesture-handler": "file:../node_modules/@react-native-oh-tpl/react-native-gesture-handler/harmony/gesture_handler.har",
+    "@react-native-oh-tpl/react-native-linear-gradient": "file:../node_modules/@react-native-oh-tpl/react-native-linear-gradient/harmony/linear_gradient.har",
+    "@react-native-oh-tpl/react-native-reanimated": "file:../node_modules/@react-native-oh-tpl/react-native-reanimated/harmony/reanimated.har",
+    "@react-native-oh-tpl/react-native-safe-area-context": "file:../node_modules/@react-native-oh-tpl/react-native-safe-area-context/harmony/safe_area.har",
+    "@react-native-oh-tpl/react-native-screens": "file:../node_modules/@react-native-oh-tpl/react-native-screens/harmony/screens.har",
+    "@react-native-oh-tpl/react-native-share": "file:../node_modules/@react-native-oh-tpl/react-native-share/harmony/react_native_share.har",
+    "@react-native-oh-tpl/react-native-svg": "file:../node_modules/@react-native-oh-tpl/react-native-svg/harmony/svg.har",
+    "@react-native-oh-tpl/react-native-vision-camera": "file:../node_modules/@react-native-oh-tpl/react-native-vision-camera/harmony/vision_camera.har",
+    "@react-native-oh-tpl/react-native-webview": "file:../node_modules/@react-native-oh-tpl/react-native-webview/harmony/rn_webview.har"
+  },
+  "devDependencies": {
+    "@ohos/hypium": "1.0.6",
+  },
+  "overrides": {
+    "@rnoh/react-native-openharmony": "file:../node_modules/@react-native-oh/react-native-harmony/react_native_openharmony.har",
+  },
+}
+

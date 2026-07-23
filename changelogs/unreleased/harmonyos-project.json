@@ -1,0 +1,5 @@
+﻿{
+  "title": "HarmonyOS: add HarmonyOS native project files for RNOH integration",
+  "type": "feat",
+  "packages": "core"
+}
