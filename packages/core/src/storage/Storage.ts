@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {MMKV} from 'react-native-mmkv';
+import {Platform} from 'react-native';
 
 interface InternalStorage {
   set(key: string, value: any): void;
@@ -25,6 +25,118 @@ interface InternalStorage {
   clearAll(): void;
   getAllKeys(): string[];
   delete(key: string): void;
+}
+
+class MMKVStorage implements InternalStorage {
+  private mmkv: any;
+
+  constructor() {
+    try {
+      const {MMKV} = require('react-native-mmkv');
+      this.mmkv = new MMKV();
+    } catch {
+      throw new Error(
+        'MMKVStorage: react-native-mmkv is not available on this platform',
+      );
+    }
+  }
+
+  set(key: string, value: any): void {
+    this.mmkv.set(key, value);
+  }
+
+  getString(key: string): string | undefined {
+    return this.mmkv.getString(key);
+  }
+
+  contains(key: string): boolean {
+    return this.mmkv.contains(key);
+  }
+
+  clearAll(): void {
+    this.mmkv.clearAll();
+  }
+
+  getAllKeys(): string[] {
+    return this.mmkv.getAllKeys();
+  }
+
+  delete(key: string): void {
+    this.mmkv.delete(key);
+  }
+}
+
+class HarmonyOSStorage implements InternalStorage {
+  private cache: Map<string, string> = new Map();
+  private filePath: string;
+  private initPromise: Promise<void>;
+
+  constructor() {
+    const RNFS = require('react-native-fs');
+    this.filePath = `${RNFS.CachesDirectoryPath}/harmony_storage.json`;
+    this.initPromise = this.load(RNFS);
+  }
+
+  private async load(RNFS: any): Promise<void> {
+    try {
+      const exists = await RNFS.exists(this.filePath);
+      if (exists) {
+        const data = await RNFS.readFile(this.filePath, 'utf8');
+        const parsed = JSON.parse(data);
+        for (const [key, value] of Object.entries(parsed)) {
+          this.cache.set(key, value as string);
+        }
+      }
+    } catch (e) {
+      console.warn('HarmonyOSStorage: load failed', e);
+    }
+  }
+
+  private async persist(): Promise<void> {
+    await this.initPromise;
+    try {
+      const RNFS = require('react-native-fs');
+      const obj: Record<string, string> = {};
+      this.cache.forEach((v, k) => { obj[k] = v; });
+      await RNFS.writeFile(this.filePath, JSON.stringify(obj), 'utf8');
+    } catch (e) {
+      console.warn('HarmonyOSStorage: persist failed', e);
+    }
+  }
+
+  set(key: string, value: any): void {
+    this.cache.set(key, value);
+    this.persist();
+  }
+
+  getString(key: string): string | undefined {
+    return this.cache.get(key);
+  }
+
+  contains(key: string): boolean {
+    return this.cache.has(key);
+  }
+
+  clearAll(): void {
+    this.cache.clear();
+    this.persist();
+  }
+
+  getAllKeys(): string[] {
+    return Array.from(this.cache.keys());
+  }
+
+  delete(key: string): void {
+    this.cache.delete(key);
+    this.persist();
+  }
+}
+
+function createStorage(): InternalStorage {
+  if (Platform.OS === 'harmony') {
+    return new HarmonyOSStorage();
+  }
+  return new MMKVStorage();
 }
 
 export class Storage {
@@ -65,7 +177,7 @@ export class Storage {
   }
 }
 
-export const storage = new Storage(new MMKV());
+export const storage = new Storage(createStorage());
 
 export function useStorage() {
   return storage;

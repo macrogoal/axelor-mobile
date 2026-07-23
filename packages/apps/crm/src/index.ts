@@ -27,6 +27,7 @@ import EventScreen from './screens/event';
 import TourScreen from './screens/tour';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import * as crmReducers from './features';
 import {
   crm_formsRegister,
@@ -102,6 +103,7 @@ export const CrmModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   reducers: {...crmReducers},
   models: {

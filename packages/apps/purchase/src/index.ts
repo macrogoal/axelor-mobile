@@ -20,6 +20,7 @@ import {Module} from '@axelor/aos-mobile-core';
 import PurchaseScreens from './screens';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import * as purchaseReducers from './features';
 import {
   purchase_formsRegister,
@@ -57,6 +58,7 @@ export const PurchaseModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   models: {
     headerRegisters: usePurchaseHeaders,

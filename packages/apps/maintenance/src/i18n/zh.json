@@ -1,0 +1,21 @@
+{
+  "Maintenance_Maintenance": "维护",
+  "Maintenance_MaintenanceRequests": "维护请求",
+  "Maintenance_MaintenanceEquipment": "维护设备",
+  "Maintenance_Machine": "机器",
+  "Maintenance_Deadline": "期限",
+  "Maintenance_RequestActionType": "操作类型",
+  "Maintenance_RequestActionType_Corrective": "纠正性",
+  "Maintenance_RequestActionType_Preventive": "预防性",
+  "Maintenance_RequestStatus_Planned": "已计划",
+  "Maintenance_RequestStatus_InProgress": "进行中",
+  "Maintenance_RequestStatus_Completed": "已完成",
+  "Maintenance_RequestStatus_Canceled": "已取消",
+  "Maintenance_CreateMaintenanceRequest": "创建维护请求",
+  "Maintenance_CreateRequest": "创建请求",
+  "Maintenance_MachinesUnavailable": "机器不可用",
+  "Maintenance_SliceAction_SearchMaintenanceRequests": "搜索维护请求",
+  "Maintenance_SliceAction_CreateMaintenanceRequest": "创建维护请求",
+  "Maintenance_SliceAction_SearchEquipementMaintenance": "搜索维护设备",
+  "Maintenance_SliceAction_FetchPlannedMaintenanceRequests": "获取计划维护请求"
+}

@@ -1,54 +1,40 @@
-diff --git a/node_modules/react-native-datawedge-intents/android/src/main/java/com/darryncampbell/rndatawedgeintents/RNDataWedgeIntentsModule.java b/node_modules/react-native-datawedge-intents/android/src/main/java/com/darryncampbell/rndatawedgeintents/RNDataWedgeIntentsModule.java
-index 3e486d2..929721f 100644
---- a/node_modules/react-native-datawedge-intents/android/src/main/java/com/darryncampbell/rndatawedgeintents/RNDataWedgeIntentsModule.java
-+++ b/node_modules/react-native-datawedge-intents/android/src/main/java/com/darryncampbell/rndatawedgeintents/RNDataWedgeIntentsModule.java
-@@ -12,6 +12,7 @@ import android.content.BroadcastReceiver;
- import android.content.Context;
- import android.content.IntentFilter;
- import android.os.Bundle;
-+import android.os.Build;
- import org.json.JSONObject;
- import org.json.JSONException;
- import org.json.JSONArray;
-@@ -105,7 +106,12 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
- 
-         IntentFilter filter = new IntentFilter();
-         filter.addAction(ACTION_ENUMERATEDLISET);
--        reactContext.registerReceiver(myEnumerateScannersBroadcastReceiver, filter);
-+        if (Build.VERSION.SDK_INT >= 34 && reactContext.getApplicationInfo().targetSdkVersion >= 34) {
-+            reactContext.registerReceiver(myEnumerateScannersBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
-+        } else {
-+            reactContext.registerReceiver(myEnumerateScannersBroadcastReceiver, filter);
-+        }
+diff --git a/node_modules/react-native-datawedge-intents/index.js b/node_modules/react-native-datawedge-intents/index.js
+index aa5bfc1..5b3c90a 100644
+--- a/node_modules/react-native-datawedge-intents/index.js
++++ b/node_modules/react-native-datawedge-intents/index.js
+@@ -1,7 +1,7 @@
+ /**
+  * @providesModule DataWedgeIntents
+  */
+-
 +
- 	    if (this.registeredAction != null)
-           registerReceiver(this.registeredAction, this.registeredCategory);
-           
-@@ -357,7 +363,12 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
-         filter.addAction(action);
-         if (category != null && category.length() > 0)
-           filter.addCategory(category);
--        this.reactContext.registerReceiver(scannedDataBroadcastReceiver, filter);
-+
-+        if (Build.VERSION.SDK_INT >= 34 && this.reactContext.getApplicationInfo().targetSdkVersion >= 34) {
-+            this.reactContext.registerReceiver(scannedDataBroadcastReceiver, filter, Context.RECEIVER_EXPORTED);
-+        } else {
-+            this.reactContext.registerReceiver(scannedDataBroadcastReceiver, filter);
-+        }
-     }
+ 'use strict';
  
-     @ReactMethod
-@@ -389,7 +400,12 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
-                 }
-             }
-         }
--        this.reactContext.registerReceiver(genericReceiver, filter);
+ var { Platform, NativeModules } = require('react-native');
+@@ -39,4 +39,25 @@ if (Platform.OS === 'android')
+         registerReceiver(action, category) {
+             //  THIS METHOD IS DEPRECATED, use registerBroadcastReceiver
+             RNDataWedgeIntents.registerReceiver(action, category);
++        },
++    };
++    module.exports = DataWedgeIntents;
++} else {
++    var DataWedgeIntents = {
++        ACTION_SOFTSCANTRIGGER: 'com.symbol.datawedge.api.ACTION_SOFTSCANTRIGGER',
++        ACTION_SCANNERINPUTPLUGIN: 'com.symbol.datawedge.api.ACTION_SCANNERINPUTPLUGIN',
++        ACTION_ENUMERATESCANNERS: 'com.symbol.datawedge.api.ACTION_ENUMERATESCANNERS',
++        ACTION_SETDEFAULTPROFILE: 'com.symbol.datawedge.api.ACTION_SETDEFAULTPROFILE',
++        ACTION_RESETDEFAULTPROFILE: 'com.symbol.datawedge.api.ACTION_RESETDEFAULTPROFILE',
++        ACTION_SWITCHTOPROFILE: 'com.symbol.datawedge.api.ACTION_SWITCHTOPROFILE',
++        START_SCANNING: 'com.symbol.datawedge.api.START_SCANNING',
++        STOP_SCANNING: 'com.symbol.datawedge.api.STOP_SCANNING',
++        TOGGLE_SCANNING: 'com.symbol.datawedge.api.TOGGLE_SCANNING',
++        ENABLE_PLUGIN: 'com.symbol.datawedge.api.ENABLE_PLUGIN',
++        DISABLE_PLUGIN: 'com.symbol.datawedge.api.DISABLE_PLUGIN',
 +
-+        if (Build.VERSION.SDK_INT >= 34 && this.reactContext.getApplicationInfo().targetSdkVersion >= 34) {
-+            this.reactContext.registerReceiver(genericReceiver, filter, Context.RECEIVER_EXPORTED);
-+        } else {
-+            this.reactContext.registerReceiver(genericReceiver, filter);
-+        }
-     }
- 
-     private void unregisterReceivers() {
++        sendIntent(action, parameterValue) {},
++        sendBroadcastWithExtras(extrasObject) {},
++        registerBroadcastReceiver(filter) {},
++        registerReceiver(action, category) {},
+     };
+     module.exports = DataWedgeIntents;

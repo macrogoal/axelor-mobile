@@ -30,6 +30,10 @@ import {
   isScanIntent,
   isVersionIntent,
 } from './intent.helpers';
+const supportsDataWedge = (): boolean => {
+  return Platform.OS !== 'ios' && Platform.OS !== 'harmony';
+};
+
 
 const Scanner = () => {
   const dispatch = useDispatch();
@@ -121,14 +125,14 @@ const Scanner = () => {
   );
 
   useEffect(() => {
-    if (Platform.OS !== 'ios') {
+    if (supportsDataWedge()) {
       registerBroadcastReceiver();
       determineVersion();
     }
   }, [determineVersion, registerBroadcastReceiver]);
 
   useEffect(() => {
-    if (Platform.OS !== 'ios') {
+    if (supportsDataWedge()) {
       const listener = DeviceEventEmitter.addListener(
         'datawedge_broadcast_intent',
         broadcastReceiver,

@@ -1,0 +1,5 @@
+﻿{
+  "title": "NativeSlider: fix touch position drift on scrollable views by using locationX instead of measureInWindow",
+  "type": "fix",
+  "packages": "ui"
+}

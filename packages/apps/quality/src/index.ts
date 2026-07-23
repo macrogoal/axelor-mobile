@@ -21,6 +21,7 @@ import ControlEntyScreens from './screens/ControlEntry';
 import QualityImprovement from './screens/QualityImprovement';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import {
   quality_formsRegister,
   quality_modelAPI,
@@ -51,6 +52,7 @@ export const QualityModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   menus: {
     quality_menu_controlEntrySeparator: {

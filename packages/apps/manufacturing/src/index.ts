@@ -22,6 +22,7 @@ import OperationOrderScreens from './screens/operationOrder';
 import StockScreens from './screens/stock';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import * as manufacturingReducers from './features';
 import {
   manufacturing_modelAPI,
@@ -65,6 +66,7 @@ export const ManufacturingModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   reducers: {
     ...manufacturingReducers,

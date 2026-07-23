@@ -18,8 +18,7 @@
 
 import React, {useEffect, useState, useCallback, useMemo, useRef} from 'react';
 import {Dimensions, Platform, StyleSheet, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
+import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useDispatch} from 'react-redux';
 import {
   Camera as PackageCamera,
@@ -45,28 +44,26 @@ import {Toast} from '../Toast';
 
 const CONTENT_SPACING = 40;
 const PHOTO_TYPE = 'jpeg';
-
-const SAFE_BOTTOM =
-  Platform.select({
-    ios: StaticSafeAreaInsets.safeAreaInsetsBottom,
-  }) ?? 0;
-
-const SAFE_AREA_PADDING = {
-  paddingLeft: StaticSafeAreaInsets.safeAreaInsetsLeft + CONTENT_SPACING,
-  paddingTop: StaticSafeAreaInsets.safeAreaInsetsTop + CONTENT_SPACING * 1.5,
-  paddingRight: StaticSafeAreaInsets.safeAreaInsetsRight + CONTENT_SPACING / 2,
-  paddingBottom: SAFE_BOTTOM + CONTENT_SPACING,
-};
-
 const BUTTON_SIZE = 40;
 
 const Camera = () => {
   const Colors = useThemeColor();
+  const insets = useSafeAreaInsets();
   const {isEnabled: isScanActive} = useCameraScannerSelector();
   const {isEnabled: isCameraActive} = useCameraSelector();
   const {hasPermission, requestPermission} = useCameraPermission();
   const camera = useRef(null);
   const dispatch = useDispatch();
+
+  const SAFE_AREA_PADDING = useMemo(
+    () => ({
+      paddingLeft: insets.left + CONTENT_SPACING,
+      paddingTop: insets.top + CONTENT_SPACING * 1.5,
+      paddingRight: insets.right + CONTENT_SPACING / 2,
+      paddingBottom: (Platform.OS === 'ios' ? insets.bottom : 0) + CONTENT_SPACING,
+    }),
+    [insets],
+  );
 
   const [cameraPosition, setCameraPosition] = useState<'back' | 'front'>(
     'back',

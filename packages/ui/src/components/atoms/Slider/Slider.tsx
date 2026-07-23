@@ -18,7 +18,7 @@
 
 import React, {useEffect, useMemo, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {default as RNSlider} from '@react-native-community/slider';
+import RNSlider from './NativeSlider';
 import {Color, useThemeColor} from '../../../theme';
 import {useDigitFormat} from '../../../hooks/use-digit-format';
 import {Text} from '../../atoms';

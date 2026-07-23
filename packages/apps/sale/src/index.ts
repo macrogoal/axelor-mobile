@@ -19,6 +19,7 @@
 import {getModelId, isModel, Module} from '@axelor/aos-mobile-core';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import CartScreens from './screens/cart';
 import ProductScreens from './screens/product';
 import SaleOrderScreens from './screens/saleOrder';
@@ -46,6 +47,7 @@ export const SaleModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   menus: {
     sale_menu_cartSeparator: {

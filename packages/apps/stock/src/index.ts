@@ -20,6 +20,7 @@ import {Module} from '@axelor/aos-mobile-core';
 import StockScreens from './screens';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import * as stockReducers from './features';
 import {
   stock_modelAPI,
@@ -85,6 +86,7 @@ export const StockModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   reducers: {
     ...stockReducers,

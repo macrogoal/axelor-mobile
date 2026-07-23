@@ -19,6 +19,7 @@
 import {getLoggedUser, Module, modulesProvider} from '@axelor/aos-mobile-core';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import DmsScreens from './screens';
 import * as dmsReducers from './features';
 import {
@@ -38,6 +39,7 @@ export const DmsModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   menus: {
     dms_menu_allDocuments: {

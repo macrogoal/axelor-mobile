@@ -19,6 +19,7 @@
 import {Module, getTypes, showToastMessage} from '@axelor/aos-mobile-core';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import ExpenseScreens from './screens/expense';
 import TimesheetScreens from './screens/timesheet';
 import LeaveScreens from './screens/leaveRequests';
@@ -46,6 +47,7 @@ export const HrModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   menus: {
     hr_menu_timesheetsSeparator: {

@@ -37,7 +37,7 @@ export const app_config = {
    * This value is automatically overwritten by the user's default language
    * once logged in if the latter is set.
    */
-  defaultLanguage: 'en',
+  defaultLanguage: 'zh',
 
   /*
    * This setting is used to define the default request limit used is createStandardSearch

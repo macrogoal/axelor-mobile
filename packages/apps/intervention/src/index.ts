@@ -19,6 +19,7 @@
 import {Module} from '@axelor/aos-mobile-core';
 import enTranslations from './i18n/en.json';
 import frTranslations from './i18n/fr.json';
+import zhTranslations from './i18n/zh.json';
 import InterventionScreens from './screens/intervention';
 import EquipmentsScreens from './screens/equipment/';
 import * as interventionReducers from './features';
@@ -43,6 +44,7 @@ export const InterventionModule: Module = {
   translations: {
     en: enTranslations,
     fr: frTranslations,
+    zh: zhTranslations,
   },
   menus: {
     intervention_menu_interventionSeparator: {

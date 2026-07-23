@@ -1,0 +1,5 @@
+﻿{
+  "title": "Storage: fix HarmonyOSStorage async init race condition and add try-catch safety to MMKVStorage",
+  "type": "fix",
+  "packages": "core"
+}

@@ -1,0 +1,5 @@
+﻿{
+  "title": "Scanner: extract DataWedge platform check into supportsDataWedge helper for maintainability",
+  "type": "refactor",
+  "packages": "core"
+}
