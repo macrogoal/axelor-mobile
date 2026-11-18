@@ -27,8 +27,8 @@
     "react-native": "0.83.1"
   },
   "dependencies": {
-    "@axelor/aos-mobile-ui": "9.1.0",
     "@axelor/aos-mobile-core": "9.1.0",
+    "@axelor/aos-mobile-ui": "9.1.0",
     "@reduxjs/toolkit": "2.11.2"
   },
   "devDependencies": {

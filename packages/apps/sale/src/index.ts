@@ -42,7 +42,7 @@ export const SaleModule: Module = {
   icon: 'graph-up-arrow',
   compatibilityAOS: {
     moduleName: 'axelor-sale',
-    downToVersion: '8.2.0',
+    downToVersion: '8.2.2',
   },
   translations: {
     en: enTranslations,

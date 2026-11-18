@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type { RNPackageContext, RNOHPackage } from '@rnoh/react-native-openharmony';
+import type { RNPackageContext, RNPackage } from '@rnoh/react-native-openharmony';
 import { createRNOHPackages as createRNOHPackagesAutolinking } from "./RNOHPackagesFactory"
 
-export function getRNOHPackages(ctx: RNPackageContext): RNOHPackage[] {
+export function getRNOHPackages(ctx: RNPackageContext): RNPackage[] {
   return [
     ...createRNOHPackagesAutolinking(ctx)
   ]

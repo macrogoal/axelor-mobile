@@ -38,7 +38,7 @@ export const ProjectModule: Module = {
   icon: 'ui-checks',
   compatibilityAOS: {
     moduleName: 'axelor-project',
-    downToVersion: '8.2.0',
+    downToVersion: '8.2.2',
   },
   translations: {
     en: enTranslations,

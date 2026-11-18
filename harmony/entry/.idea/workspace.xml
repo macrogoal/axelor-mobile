@@ -2,31 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062d7582-e5f9-430e-991e-0cd82951d10f" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.github/workflows/gradle.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../INSTALLATION_GUIDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../INSTALLATION_GUIDE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../metro.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../metro.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docs/doc/en/GettingStarted.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../docs/doc/en/GettingStarted.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docs/doc/fr/GettingStarted.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../docs/doc/fr/GettingStarted.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-profile.json5" beforeDir="false" afterPath="$PROJECT_DIR$/../build-profile.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-profile.template.json5" beforeDir="false" afterPath="$PROJECT_DIR$/../build-profile.template.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ets/PackageProvider.ets" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ets/PackageProvider.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ets/RNOHPackagesFactory.ets" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ets/RNOHPackagesFactory.ets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hvigor/hvigor-config.json5" beforeDir="false" afterPath="$PROJECT_DIR$/../hvigor/hvigor-config.json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oh-package.json5" beforeDir="false" afterPath="$PROJECT_DIR$/../oh-package.json5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/crm/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/crm/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/dms/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/dms/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/helpdesk/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/helpdesk/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/hr/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/hr/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/intervention/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/intervention/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/maintenance/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/maintenance/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/manufacturing/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/manufacturing/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/message/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/message/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../packages/apps/project/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/project/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../packages/apps/project/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/project/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/purchase/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/purchase/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/quality/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/quality/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../packages/apps/sale/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/sale/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../packages/apps/sale/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/sale/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/apps/stock/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/stock/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/core/src/app/ContextsProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/core/src/app/ContextsProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/core/src/components/external/Camera/Camera.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/core/src/components/external/Camera/Camera.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/core/src/components/external/Scanner/Scanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/core/src/components/external/Scanner/Scanner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/core/src/storage/Storage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/core/src/storage/Storage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/ui/src/components/atoms/Slider/Slider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/ui/src/components/atoms/Slider/Slider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../packages/ui/src/components/templates/BottomBar/BottomBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/ui/src/components/templates/BottomBar/BottomBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../patches/react-native+0.83.1.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../patches/react-native-datawedge-intents+0.1.8.patch" beforeDir="false" afterPath="$PROJECT_DIR$/../../patches/react-native-datawedge-intents+0.1.8.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/app.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../packages/apps/stock/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/apps/stock/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../packages/ui/src/icons/bootstrap-icon-map.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../packages/ui/src/icons/bootstrap-icon-map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,14 +40,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/axelor/axelor-mobile/harmony/entry",
-    "settings.editor.selected.configurable": "com.intellij.platform.ide.impl.presentationAssistant.PresentationAssistantConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/axelor/axelor-mobile/harmony/entry&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.huawei.deveco.sdkmanager.hos.idea.ui.SdkConfigProvider&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="062d7582-e5f9-430e-991e-0cd82951d10f" name="更改" comment="" />
+      <created>1791449704719</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1791449704719</updated>
+    </task>
+    <servers />
+  </component>
 </project>
